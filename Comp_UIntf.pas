@@ -20,8 +20,8 @@ type
   { ITogglable }
   ITogglable = interface
     ['{1D562094-09E1-4C9C-8BF1-C4EEA03EF02F}']
-    function GetToggleButtonStyle: TToggleButtonStyle;
-    property ToggleButtonStyle: TToggleButtonStyle read GetToggleButtonStyle;
+    function GetToggleButtonStyle: TScToggleButtonStyle;
+    property ToggleButtonStyle: TScToggleButtonStyle read GetToggleButtonStyle;
   end;
 
 implementation

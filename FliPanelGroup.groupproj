@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{5F2E80CA-EC9C-4645-9BD6-00C4E3E5FDC7}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="Comp_FlipPanel.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Comp_FlipPanelDsgn.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="Comp_FlipPanel">
+			<MSBuild Projects="Comp_FlipPanel.dproj"/>
+		</Target>
+		<Target Name="Comp_FlipPanel:Clean">
+			<MSBuild Targets="Clean" Projects="Comp_FlipPanel.dproj"/>
+		</Target>
+		<Target Name="Comp_FlipPanel:Make">
+			<MSBuild Targets="Make" Projects="Comp_FlipPanel.dproj"/>
+		</Target>
+		<Target Name="Comp_FlipPanelDsgn">
+			<MSBuild Projects="Comp_FlipPanelDsgn.dproj"/>
+		</Target>
+		<Target Name="Comp_FlipPanelDsgn:Clean">
+			<MSBuild Targets="Clean" Projects="Comp_FlipPanelDsgn.dproj"/>
+		</Target>
+		<Target Name="Comp_FlipPanelDsgn:Make">
+			<MSBuild Targets="Make" Projects="Comp_FlipPanelDsgn.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="Comp_FlipPanel;Comp_FlipPanelDsgn"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="Comp_FlipPanel:Clean;Comp_FlipPanelDsgn:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="Comp_FlipPanel:Make;Comp_FlipPanelDsgn:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

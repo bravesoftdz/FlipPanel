@@ -1,4 +1,4 @@
-package Comp_FlipPanel;
+package Comp_FlipPanelDsgn;
 
 {$R *.res}
 {$ALIGN 8}
@@ -26,13 +26,9 @@ package Comp_FlipPanel;
 
 requires
   rtl,
-  vcl;
+  Comp_FlipPanel;
 
 contains
-  Comp_UFlipPanel in 'Comp_UFlipPanel.pas',
-  Comp_UIntf in 'Comp_UIntf.pas',
-  Comp_UTypes in 'Comp_UTypes.pas',
-  Comp_UControls in 'Comp_UControls.pas',
-  Comp_UGraphics in 'Comp_UGraphics.pas';
+  Comp_URegister in 'Comp_URegister.pas';
 
 end.
